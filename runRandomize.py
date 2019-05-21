@@ -1,12 +1,12 @@
-import WP3randomize
+import Utils.utilsRandomize
 
 templ = { \
-    "fileInput": "Data/linksWP3.json", \
-    "fileInputProteins": "Data/proteinList.json", \
-	"fileOutput": "Rez/rand_res.json", \
+	"fileInput": "./Data/links.json", \
+	"fileInputProteins": "./Data/proteinList.json", \
+	"fileOutput": "./Results/dataRandomized.json", \
 	"randomizeCount": 12, \
 	"saveAfterCount": 3, \
 }
 
-rm = WP3randomize.randomizeMotifs(templ)
+rm = Utils.utilsRandomize.randomizeMotifs(templ)
 rm.executeRandomize()
