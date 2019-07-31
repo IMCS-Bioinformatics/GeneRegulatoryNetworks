@@ -16,6 +16,19 @@ class utilsMotifs:
         self.proteinList = self.randomizedMotifs["proteinList"]
         self.ratio = self.template["ratio"]
         self.motifNames = ["FFLX", "FFLY", "FFLZ", "FBLDX", "FBLDY", "FBLUY", "FBLUZ", "C2", "C3", "C4"]
+        if self.template["swapPairsRandom"]:
+            self.swapPairsRandom()
+    def swapPairsRandom(self): 
+        random.seed(self.template["seed"])
+        self.proteinList = []
+        for i in range(len(self.ohnologues)):
+            r = random.randint(0,1) 
+            if r == 1:
+                v = self.ohnologues[i][0]
+                self.ohnologues[i][0] = self.ohnologues[i][1]
+                self.ohnologues[i][1] = v
+            self.proteinList.append(self.ohnologues[i][0])
+            self.proteinList.append(self.ohnologues[i][1])
     def validMotifValue(self, v): return (v / self.count) <= self.ratio
     def calcProteinMotifs(self):
         self.proteinMotifs = {}
