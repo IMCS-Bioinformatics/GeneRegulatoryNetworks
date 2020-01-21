@@ -1,11 +1,11 @@
 import Utils.utilsRandomize
 
 templ = { \
-	"fileInput": "./Data/links.json", \
-	"fileInputProteins": "./Data/proteinList.json", \
-	"fileOutput": "./Results/dataRandomized.json", \
-	"randomizeCount": 10000, \
-	"saveAfterCount": 100, \
+    "fileInput": "./Data/ScervisiaeNetwork.json", \
+    "fileInputProteins": "./Data/ScervisiaeTF.json", \
+	"fileOutput": "./Results/dataRandomizedScervisiae.json", \
+	"randomizeCount": 12, \
+	"saveAfterCount": 3, \
 }
 
 rm = Utils.utilsRandomize.randomizeMotifs(templ)
